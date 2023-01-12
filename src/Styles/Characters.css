@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+.main-container{
+    width: 100vw;
+    height: 85vh;
+    background-color: rgba(0, 255, 255, 0);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.search{
+    width: 100vw;
+    height: 10%;
+    background-color: rgba(255, 228, 196, 0);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.search input{
+    width: 30%;
+    height: 70%;
+    margin-left: 3.5%;
+}
+
+.sub-container{
+    width: 100vw;
+    height: 70vh;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cards, .view{
+    height: 100%;
+    width: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cards{
+    background-color: rgb(240, 255, 127);
+}
+.paging{
+    width: 100vw;
+    height: 10%;
+    background-color: rgba(137, 43, 226, 0);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.paging-left, .paging-right{
+    width: 50%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0);
+    display: flex;
+    align-items: center;
+}
+.paging-left{
+    background-color: rgba(240, 248, 255, 0);
+    justify-content: left;
+}
+.paging-left button{
+    margin-left: 7%;
+}
+.paging-right{
+    background-color: rgba(240, 248, 255, 0);
+    justify-content: right;
+}
+.paging-right button{
+    margin-right: 7%;
+}
+button{
+    width: 20%;
+    height: 70%;
+    background-color: rgb(11, 93, 244);
+    color: white;
+    border-radius: 5px;
+}
