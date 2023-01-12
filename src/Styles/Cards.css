@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0%;
+    
+}
+
+.cards-container{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 192, 203, 0);
+    display: flex;
+    flex-basis: 85%;   
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: repeat(2, minmax(30%,0.5fr));
+}
+
+.card-in{
+    width: 80%;
+    height: 90%;
+    background-color: cadetblue;
+    border-radius: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+img{
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+
+.nombre, .id{
+    width: 100%;
+    height: 20%;
+    background-color: rgba(240, 248, 255, 0);
+    margin: 0;
+    padding: 0%;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+
+}

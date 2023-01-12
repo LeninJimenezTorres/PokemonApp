@@ -1,6 +1,7 @@
 import React from 'react'
 import '../Styles/Characters.css';
 import Cards from './Cards';
+import PokemonInfo from './PokemonInfo';
 
 function Characters() {
   return (
@@ -13,7 +14,7 @@ function Characters() {
                 <Cards/>    
             </div>
             <div className='view'>
-                
+                <PokemonInfo/>
             </div>
         </div>
         <div className='paging'>

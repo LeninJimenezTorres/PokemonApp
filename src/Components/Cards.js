@@ -10,7 +10,21 @@ function Cards() {
             <p className='nombre'>Nombre pokemon</p>
             <p className='id'>Identificador</p>
         </div>
-        
+        <div className='card-in'>
+            <img src={Pokemon} alt=""/>
+            <p className='nombre'>Nombre pokemon</p>
+            <p className='id'>Identificador</p>
+        </div>
+        <div className='card-in'>
+            <img src={Pokemon} alt=""/>
+            <p className='nombre'>Nombre pokemon</p>
+            <p className='id'>Identificador</p>
+        </div>
+        <div className='card-in'>
+            <img src={Pokemon} alt=""/>
+            <p className='nombre'>Nombre pokemon</p>
+            <p className='id'>Identificador</p>
+        </div>
     </div>
   )
 }
