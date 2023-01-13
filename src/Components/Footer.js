@@ -3,7 +3,7 @@ import '../Styles/Footer.css';
 
 function Footer() {
   return (
-    <div className='footer'>Developer By Lenin Jimenez</div>
+    <div className='footer'>Developed by Lenin Jimenez</div>
   )
 }
 

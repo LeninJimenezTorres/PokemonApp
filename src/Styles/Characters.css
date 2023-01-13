@@ -2,11 +2,10 @@
 
 .main-container{
     width: 100vw;
-    height: 85vh;
+    height: 87.5vh;
     background-color: rgba(0, 255, 255, 0);
     display: flex;
     flex-direction: column;
-    overflow: hidden;
 }
 .search{
     width: 100vw;
@@ -17,9 +16,10 @@
     align-items: center;
 }
 .search input{
-    width: 30%;
+    width: 38.5%;
     height: 70%;
     margin-left: 3.5%;
+    font-size: 1.7rem;
 }
 
 .sub-container{
@@ -50,6 +50,10 @@
     justify-content: center;
     align-items: center;
 }
+.paging button{
+    font-size: 1.2rem;
+}
+
 .paging-left, .paging-right{
     width: 50%;
     height: 100%;
@@ -68,6 +72,7 @@
     background-color: rgba(240, 248, 255, 0);
     justify-content: right;
 }
+
 .paging-right button{
     margin-right: 7%;
 }

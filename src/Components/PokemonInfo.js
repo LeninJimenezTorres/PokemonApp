@@ -7,6 +7,8 @@ function PokemonInfo() {
     <div className='info-container'>
         <div className='info-in'>
             <img src={Pokemon} alt=""/>
+            <p className='numero-info'>#</p>
+            <p className='nombre-info'>Pepito</p>
             <p className='types'>Types</p>
             <p className='peso'>Peso</p>
             <p className='sprites'>Sprites</p>

@@ -2,30 +2,28 @@ import React from 'react'
 import '../Styles/Cards.css';
 import Pokemon from './pokemonejemplo.png';
 
-function Cards() {
-  return (
-    <div className='cards-container'>
-        <div className='card-in'>
-            <img src={Pokemon} alt=""/>
-            <p className='nombre'>Nombre pokemon</p>
-            <p className='id'>Identificador</p>
+function Cards({pokemon, loading}) {
+    //console.log(pokemon);
+    return (
+        <div className='cards-container'>
+
+            {
+                loading ? 
+                    <h1>Loading...</h1>
+                :
+                    pokemon.map(item=>{
+                        return(
+                            <>
+                                <div className='card-in' key={item.id}>
+                                    <img src={item.sprites.front_default} alt=""/>
+                                    <p className='nombre'>{item.name}</p>
+                                    <p className='id'>{item.id}</p>
+                                </div>
+                            </>
+                        )
+                    })
+            }
         </div>
-        <div className='card-in'>
-            <img src={Pokemon} alt=""/>
-            <p className='nombre'>Nombre pokemon</p>
-            <p className='id'>Identificador</p>
-        </div>
-        <div className='card-in'>
-            <img src={Pokemon} alt=""/>
-            <p className='nombre'>Nombre pokemon</p>
-            <p className='id'>Identificador</p>
-        </div>
-        <div className='card-in'>
-            <img src={Pokemon} alt=""/>
-            <p className='nombre'>Nombre pokemon</p>
-            <p className='id'>Identificador</p>
-        </div>
-    </div>
   )
 }
 

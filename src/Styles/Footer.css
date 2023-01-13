@@ -2,7 +2,8 @@
 
 .footer{
     width: 100vw;
-    height: 5vh;
+    height: 2.5vh;
+    bottom: 0;
     background-color: black;
     color: white;
     display: flex;

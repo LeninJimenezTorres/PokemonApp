@@ -21,17 +21,17 @@
 
 
 .info-in img{
-    width: 50%;
+    width: 30%;
     background-color: rgba(0, 0, 0, 0);
-    margin-left: 25%;
+    margin-left: 35%;
 }
 
-.types, .peso, .movimientos, .sprites{
+.types, .peso, .movimientos, .sprites, .numero-info, .nombre-info{
     align-items: flex-start;
     width: 95%;
     height: 10%;
     background-color: rgba(250, 235, 215, 0);
-    margin-top: 1%;
+    margin-top: 0%;
     padding-left: 5%;
     display: flex;
     justify-content: left;
@@ -40,5 +40,9 @@
     font-size: 1.5rem;
     font-family: 'Roboto Condensed', sans-serif;
     font-family: 'Roboto', sans-serif;
-
+}
+.numero-info, .nombre-info{
+    justify-content: center;
+    margin: 0%;
+    padding: 0%;
 }
