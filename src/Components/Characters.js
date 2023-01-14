@@ -2,50 +2,29 @@ import React from 'react'
 import '../Styles/Characters.css';
 import Cards from './Cards';
 import PokemonInfo from './PokemonInfo';
-import axios from 'axios';
 import { useState, useEffect } from 'react';
 
+import { dataAll } from '../Functions/Functions';
+
 function Characters() {
-    const [pokeData, setPokeData] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/");
-    const [nextUrl, setNextUrl]=useState();
-    const [prevtUrl, setPrevUrl]=useState();
+    //const [pokeData, setPokeData] = useState([]);
+    //const [loading, setLoading] = useState(true);
+    //const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/");
+    //const [nextUrl, setNextUrl]=useState();
+    //const [prevtUrl, setPrevUrl]=useState();
+    //const [texto,setTexto] = useState(null);
+    
+    const [allPokemons,setAllPokemons] = useState(null);
+    const [allPokemonsInfo,setAllPokemonsInfo] = useState(null);
 
-    const pokeFun = async ()=>{
-        setLoading(true);
-        const res = await axios.get(url);
-        //console.log(res.data); 
-        setNextUrl(res.data.next);
-        setPrevUrl(res.data.previous);
-        getPokemon(res.data.results);
-        setLoading(false);
-    }
-    const getPokemon = async(res)=>{
-        res.map(async(item)=>{
-            console.log(item.name);
-
-            const result= await axios.get(item.url);
-            //console.log(result.data);
-            setPokeData(state=>{
-                let aux=0;
-                for(let i=0; i<state.length;i++){
-                    if(state[i]==result.data){
-                        aux++;
-                    }
-                }
-                if(aux==0){
-                    state=[...state,result.data];
-                }
-                //state.sort((a,b)=>a.id>b.id?1:-1);
-                return state;
-            });
-        });
-    }
-
+    let aux=0;
     useEffect(() => {
-        pokeFun();
-    }, [url])
+        if(aux==0){
+            dataAll(setAllPokemons, setAllPokemonsInfo);
+            aux++;
+        }
+        //pokeFun();
+    }, [])
 
     return (
         <div className='main-container'>
@@ -54,7 +33,18 @@ function Characters() {
             </div>
             <div className='sub-container'>
                 <div className='cards'>
-                    <Cards pokemon={pokeData} loading={loading}/>    
+                    {
+                        allPokemonsInfo!=null?
+                        console.log(allPokemonsInfo):console.log('No cargado')
+                    }
+                    {
+                        allPokemonsInfo!=null?
+                        (   
+                            <Cards pokemon={allPokemonsInfo}/>                            
+                        )
+                        :
+                        <p>XXXXXXXXXXXX</p>
+                    }
                 </div>
                 <div className='view'>
                     <PokemonInfo/>
