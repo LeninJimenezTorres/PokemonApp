@@ -2,7 +2,7 @@
 
 .main-container{
     width: 100vw;
-    height: 87.5vh;
+    height: auto;
     background-color: rgba(0, 255, 255, 0);
     display: flex;
     flex-direction: column;
@@ -24,26 +24,23 @@
 
 .sub-container{
     width: 100vw;
-    height: 70vh;
+    height: auto;
     background-color: rgba(127, 255, 212, 0);
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.cards, .view{
-    height: 90%;
-    width: 50%;
+.cards{
+    height: 100%;
+    width: 100%;
     background-color: rgba(255, 255, 255, 0);
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.cards{
-    background-color: rgba(240, 255, 127, 0);
-}
 .paging{
     width: 100vw;
-    height: 10%;
+    height: 10vh;
     background-color: rgba(137, 43, 226, 0);
     display: flex;
     flex-direction: row;
@@ -82,47 +79,4 @@ button{
     background-color: rgb(11, 93, 244);
     color: white;
     border-radius: 5px;
-}
-
-
-
-
-.cards-container{
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 192, 203, 0);
-    display: flex;
-    flex-basis: 85%;   
-    display: grid;
-    align-items: flex-start;
-    grid-template-columns: repeat(2, minmax(30%,0.5fr));
-}
-
-.card-in{
-    width: 80%;
-    height: 90%;
-    background-color: cadetblue;
-    border-radius: 1px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    box-sizing: border-box;
-}
-
-img{
-    width: 50%;
-    background-color: rgba(0, 0, 0, 0);
-}
-
-
-.nombre, .id{
-    width: 100%;
-    height: 20%;
-    background-color: rgba(240, 248, 255, 0);
-    margin: 0;
-    padding: 0%;
-    font-size: 1.5rem;
-    font-family: 'Roboto', sans-serif;
-
 }
