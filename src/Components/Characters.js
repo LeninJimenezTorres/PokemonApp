@@ -6,71 +6,56 @@ import axios from 'axios'
 
 import UseFetch from '../Functions/UseFetch';
 import Allcards from './Allcards';
-
-import { dataAll } from '../Functions/Functions';
+import CardSearch from './CardSearch';
 
 function Characters() {
-    
-    const [loading,setLoading] = useState(true);
-    const [allPokemons,setAllPokemons] = useState(null);
-    const [allPokemonsInfo,setAllPokemonsInfo] = useState(null);
-
-    let aux=0;
-
-    const pokemonAPI = 'https://pokeapi.co/api/v2/pokemon/'
+    const [search, setsearch] = useState(null);
+    const [searchurl, setsearchurl] = useState(null);
+    const [pokemonSearch, setpokemonSearch] = useState();
     const [url,setUrl] = useState('https://pokeapi.co/api/v2/pokemon/')
+    
+    const searching = (evt)=>{
+        if(evt.key=='Enter'){
+            fetch(url+search.toLowerCase())
+            .then(resp=>resp.json())
+            .then(ok=>
+                {if (typeof ok == 'object') {
+                    //console.log(ok)
+                    console.log('searchurl: '+searchurl)
+                    setsearchurl(url+search.toLowerCase())
+                }
+            }
+            )
+            .catch(error => {
+                setsearchurl(null)
+                console.log('error')
+                console.log('searchurl: '+searchurl)
+            })
+        }
+    }
+
+    useEffect(() => {
+        if(searchurl!=null){
+            document.documentElement.style.setProperty('--visibility-cards', 'hidden');   
+        }
+        else if(searchurl==null){
+            document.documentElement.style.setProperty('--visibility-cards', 'visible');   
+        }
+    })
+
     const estado = UseFetch(url)
     const {cargando,data}=estado
     //estado?console.log(estado.data):console.log('errpr')
     //cargando?console.log('cargando'):console.log(data.results)
 
-    //useEffect(() => {
-        /*
-        const getInfo = async (arrayConsulta)=>{
-            let valoresFiltrados=[];
-            arrayConsulta.map(async (item) => {
-                let pokemon = await axios.get(item.url);
-                valoresFiltrados.push(pokemon.data);
-            });
-            return valoresFiltrados;
-        }
-        const dataRequest = async ()=>{
-            const peticion = await axios.get(pokemonAPI);
-            let datosInternos = await getInfo(peticion.data.results);
-            Promise.all([peticion,datosInternos])
-            .then((result)=>{
-                setAllPokemons(result[0])
-                setAllPokemonsInfo(result[1])
-                console.log(allPokemonsInfo)
-            })
-            .catch((err) => {
-                console.log(err)
-            });
-        }
-        dataRequest()
-        */
-       //dataAll(pokemonAPI,setAllPokemons, setAllPokemonsInfo, setLoading);
-       //console.log(allPokemons);
-        /*
-        
-        if(allPokemonsInfo!=null){
-            setLoading(true)
-        }
-
-        if(aux==0){
-            aux++;
-            console.log('Info');
-            console.log(allPokemonsInfo)
-            console.log('**************');
-        }
-        */
-        //pokeFun();
-    //}, [pokemonAPI])
-
     return (
         <div className='main-container'>
             <div className='search'>
-                <input type="text" name="search" placeholder=" Buscar" alt='Buscar'/>
+                <input type="text" name="search" placeholder=" Buscar" alt='Buscar' 
+                    onChange={e=>{ setsearch(e.target.value)}} 
+                    value={search}
+                    onKeyDown={searching} 
+                />
             </div>
             <div className='sub-container'>
                 <div className='cards'>
@@ -79,6 +64,14 @@ function Characters() {
                         <p>Cargando</p>
                         :
                         <Allcards results={data.results}/>
+                    }
+                </div>
+                <div className='search-container'>
+                    {
+                        searchurl!=null?
+                        (<CardSearch urlSearch={searchurl}/>)
+                        :
+                        (console.log('No searching...'))
                     }
                 </div>
             </div>

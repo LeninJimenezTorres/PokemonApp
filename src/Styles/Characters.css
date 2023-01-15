@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Roboto:wght@100;300;400&display=swap');
 
+:root{
+    --visibility-cards:visible;
+    --visibility-search:hidden;
+}
 
 .main-container{
     width: 100vw;
@@ -36,6 +40,7 @@
     align-items: center;
 }
 .cards{
+    visibility: var(--visibility-cards);
     height: 70vh;
     width: 100%;
     background-color: rgba(255, 255, 255, 0);
