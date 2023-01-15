@@ -15,8 +15,8 @@ const CardPokemon = ({url}) => {
             <div className='cards-container'>
             <div className='card-in' >
                     <img src={data.sprites.front_default} alt=""/>
-                    <p className='nombre'>{data.name}</p>
                     <p className='id'>{data.id}</p>
+                    <p className='nombre'>{data.name}</p>
                 </div>
                 
                 </div>

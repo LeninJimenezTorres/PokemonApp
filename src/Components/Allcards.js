@@ -39,7 +39,7 @@ const Allcards = ({results}) => {
                             if(preview){
                                 setpreview(false)
                             }   
-                            else {
+                            else if (preview==false){
                                 setpreview(true)
                             }
 
@@ -53,6 +53,10 @@ const Allcards = ({results}) => {
             <div className='close' onClick={()=>{
                 console.log('CLOSEEE')
                 if(preview==true){
+                    setpreview(false)
+                    setcerrar(true)
+                }
+                if(preview==false && cerrar==false){
                     setpreview(false)
                     setcerrar(true)
                 }

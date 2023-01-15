@@ -4,7 +4,7 @@ import UseFetch from '../Functions/UseFetch';
 function PokemonInfo({url}) {
     const estado = UseFetch(url)
     const {cargando,data}=estado
-    console.log(data)
+    //console.log(data)
 
     //const [sprites, setsprites] = useState([])
     let sprites=[]
@@ -19,11 +19,12 @@ function PokemonInfo({url}) {
                 sprites=[...sprites,spritesObject[i]]
             }
         }
-        console.log('Todos los sprites')
-        console.log(sprites);
+        //console.log('Todos los sprites')
+        //console.log(sprites);
     }
     
-    
+    //textFit(document.querySelector(".movs"));
+
     return (
         <div className='info-container'>
                 {
@@ -31,36 +32,37 @@ function PokemonInfo({url}) {
                     (<h1>Cargando</h1>)
                     :
                     <div className='info-in'>
-                        <img src={data.sprites.front_default} alt=""/>
+                        <div className='preview-img'>
+                            <img src={data.sprites.front_default} alt=""/>
+                        </div>
                         <div className='numero-info'>
-                            <p>#</p>
                             <p>{data.id}</p>
                         </div>
                         <div className='nombre-info'>
                             <p>{data.name}</p>
                         </div>
                         <div className='types'>
-                            <p>Types</p>
-                            <>
+                            <p className='tag-info'>&nbsp;Types</p>
+                            <div className='info-items'>
                                 {
                                     data.types.map(item=>
-                                        <p>{item.type.name} </p>
+                                        <p>&nbsp; {item.type.name}</p>
                                     )
                                 }
-                            </>
+                            </div>
                         </div>
                         <div className='peso'>
-                            <p>Peso</p>
-                            <p><br/>{data.weight}</p>
+                            <p className='tag-info'>&nbsp;Peso</p>
+                            <p className='info-items'><br/>&nbsp; {data.weight} Kg</p>
                         </div>
                         <div className='sprites'>
-                            <p>Sprites</p>
-                            <ul>
+                            <p className='tag-info'>&nbsp;Sprites</p>
+                            <ul className='info-items'>
                                 {
                                     sprites.length>0?
                                     sprites.map(item=>
                                         <div className='sprite-in'>
-                                            <img src={item} alt=""/>
+                                            <a href={item} target='_blank'><img src={item} alt=""/></a>
                                         </div>
                                     )
                                     :
@@ -69,14 +71,14 @@ function PokemonInfo({url}) {
                             </ul>
                         </div>
                         <div className='movimientos'>
-                            <p>Movimientos</p>
-                            <>
+                            <p className='tag-info'>&nbsp; Movimientos</p>
+                            <p className='info-items movs'>
                                 {
                                     data.moves.map(item=>
-                                        <p>{item.move.name} </p>
+                                        <>&nbsp; {item.move.name}&ensp;</>
                                     )
                                 }
-                            </>
+                            </p>
                         </div>
                     </div>
                 }
