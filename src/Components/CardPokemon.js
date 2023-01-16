@@ -8,17 +8,17 @@ const CardPokemon = ({url}) => {
     const {cargando,data}=estado
     //console.log(data);
     return (
-        <>{
-            cargando?
-            (<h1>Cargando</h1>)
-            :
-            <div className='cards-container'>
-            <div className='card-in' >
-                    <img src={data.sprites.front_default} alt=""/>
-                    <p className='id'>{data.id}</p>
-                    <p className='nombre'>{data.name}</p>
-                </div>
-                
+        <>
+            {
+                cargando?
+                (<h1>Cargando</h1>)
+                :
+                <div className='cards-container' id='cards-container'>
+                    <div className='card-in' >
+                        <img src={data.sprites.front_default} alt=""/>
+                        <p className='id'>{data.id}</p>
+                        <p className='nombre'>{data.name}</p>
+                    </div>    
                 </div>
             }
         </>

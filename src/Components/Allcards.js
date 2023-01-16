@@ -28,7 +28,7 @@ const Allcards = ({results}) => {
     })
     
     return (
-        <div className='allcards-container'>
+        <div className='allcards-container' id='allcards-container'>
             <ul>
                 {
                     results.map(p=>

@@ -1,8 +1,7 @@
-import React from 'react'
+import React from 'react';
 import '../Styles/Characters.css';
 import PokemonInfo from './PokemonInfo';
 import { useState, useEffect } from 'react';
-import axios from 'axios'
 
 import UseFetch from '../Functions/UseFetch';
 import Allcards from './Allcards';
@@ -52,7 +51,7 @@ function Characters() {
         <div className='main-container'>
             <div className='search'>
                 <input type="text" name="search" placeholder=" Buscar" alt='Buscar' 
-                    onChange={e=>{ setsearch(e.target.value)}} 
+                    onChange={e=>{ setsearch(e.target.value.toLowerCase())}} 
                     value={search}
                     onKeyDown={searching} 
                 />
