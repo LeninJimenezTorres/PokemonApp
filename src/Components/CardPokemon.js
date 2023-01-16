@@ -4,8 +4,8 @@ import '../Styles/Cards.css';
 import UseFetch from '../Functions/UseFetch';
 
 const CardPokemon = ({url}) => {
-    const estado = UseFetch(url)
-    const {cargando,data}=estado
+    const estado = UseFetch(url);
+    const [cargando,data]=estado;
     //console.log(data);
     return (
         <>

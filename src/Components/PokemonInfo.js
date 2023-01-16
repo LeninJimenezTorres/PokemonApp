@@ -3,7 +3,7 @@ import '../Styles/PokemonInfo.css';
 import UseFetch from '../Functions/UseFetch';
 function PokemonInfo({url}) {
     const estado = UseFetch(url)
-    const {cargando,data}=estado
+    const [cargando,data]=estado;
     //console.log(data)
 
     //const [sprites, setsprites] = useState([])

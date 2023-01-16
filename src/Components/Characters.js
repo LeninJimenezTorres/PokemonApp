@@ -42,8 +42,8 @@ function Characters() {
         }
     })
 
-    const estado = UseFetch(url)
-    const {cargando,data}=estado
+    const estado = UseFetch(url);
+    const [cargando,data]=estado;
     //estado?console.log(estado.data):console.log('errpr')
     //cargando?console.log('cargando'):console.log(data.results)
 
