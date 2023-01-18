@@ -1,0 +1,97 @@
+
+.info-in-s{
+    width: 50%;
+    height: 95%;
+    background-color: rgb(0, 40, 105);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+}
+
+.types-s, .peso-s, .movimientos-s, .sprites-s, .numero-info-s, .nombre-info-s, .preview-img-s{
+    align-items: flex-start;
+    width: 100%;
+    height: 40%;
+    background-color: rgba(129, 73, 0, 0);
+    margin-top: 1px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    color: black;
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bolder;
+}
+.preview-img-s{
+    justify-content: center;
+    align-items: center;
+}
+
+.info-in-s img{
+    width: 20%;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
+}
+
+.info-items-s img{
+    width: 50%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+}
+
+.numero-info-s, .nombre-info-s{
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    margin: 0%;
+    padding: 0%;
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(250, 235, 215, 0);
+    width: 100%;
+    height: 30%;
+}
+.tag-info-s{  
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    background-color: rgba(0, 255, 255, 0);
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+}
+.info-items-s{
+    width: 100%;
+    background-color: rgba(165, 42, 42, 0);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: lighter;
+}
+.sprites-s ul{
+    justify-content: center;
+}
+
+.movimientos-s{
+    height: fit-content;
+    position: relative;
+    height: 15%;
+    
+}
+
+.movs-s{
+    height: fit-content;
+    background-color: rgba(240, 248, 255, 0.242);
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    overflow-y: scroll;
+}
+

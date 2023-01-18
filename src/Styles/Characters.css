@@ -4,6 +4,7 @@
 :root{
     --visibility-cards:visible;
     --visibility-search:hidden;
+    --visibility-failmsm:hidden;
 }
 
 .main-container{
@@ -20,8 +21,14 @@
     height: 10%;
     background-color: rgba(255, 228, 196, 0);
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
+}
+
+.fail-message{
+    visibility: var(--visibility-failmsm);
+    background-color: rgba(238, 232, 170, 0);
+    width: 60%;
 }
 .search input{
     width: 38.5%;
@@ -90,4 +97,16 @@ button{
     background-color: rgb(11, 93, 244);
     color: white;
     border-radius: 5px;
+}
+
+.search-container{
+    visibility: var(--visibility-search);
+    position: fixed;
+    width: 100vw;
+    height: 70vh;
+    background-color: rgba(0, 0, 0, 0.807);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

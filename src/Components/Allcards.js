@@ -6,10 +6,10 @@ import PokemonInfo from './PokemonInfo';
 
 const Allcards = ({results}) => {
     //console.log(results)
-    const [urlPreview, setUrlPreview] = useState(null)
+    const [urlPreview, setUrlPreview] = useState(undefined)
     const [preview, setpreview] = useState(false)
-    const [anterior, setanterior] = useState(null)
-    const [nuevo, setnuevo] = useState(null)
+    const [anterior, setanterior] = useState(undefined)
+    const [nuevo, setnuevo] = useState(undefined)
     const [cerrar, setcerrar] = useState(false)
     useEffect(() => {
         if(preview==true){
@@ -33,18 +33,20 @@ const Allcards = ({results}) => {
                 {
                     results.map(p=>
                         <li key={p.name} onClick={()=>{
-                            setnuevo(p.url)
-                            setUrlPreview(p.url)
-                            setanterior(nuevo)
-                            if(preview){
-                                setpreview(false)
-                            }   
-                            else if (preview==false){
-                                setpreview(true)
-                            }
+                                if (p.url!=null) {
+                                    setnuevo(p.url)
+                                    setUrlPreview(p.url)
+                                    setanterior(nuevo)
+                                }
+                                if(preview==true){
+                                    setpreview(false)
+                                }   
+                                else if (preview==false){
+                                    setpreview(true)
+                                }
 
-                            console.log('Estados: [Preview:'+preview+'], [Cerrar:'+cerrar+']');
-                        } }>
+                                console.log('Estados: [Preview:'+preview+'], [Cerrar:'+cerrar+']');
+                            } }>
                             <CardPokemon url={p.url}/>
                         </li>
                     )
@@ -64,7 +66,12 @@ const Allcards = ({results}) => {
                         
             }}></div>
             <div className='preview'>
-                <PokemonInfo url={urlPreview}/>
+                {
+                    urlPreview!=undefined?
+                        <PokemonInfo url={urlPreview}/>
+                    :
+                    console.log('URL preview not stablished yet')
+                }
             </div>
             <div className='preview-space'></div>
         </div>

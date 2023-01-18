@@ -2,17 +2,19 @@ import React, { useEffect, useState } from 'react';
 
 function UseFetch(url) {
     const [cargando, setcargando] = useState(true);
-    const [data, setdata] = useState(null)
+    const [data, setdata] = useState(undefined)
     //const [resultado,setResultado]=useState({cargando:true,data:null});
     useEffect(() => {
-        getDatos(url)
+        if (url!=undefined || url!=null) {
+            getDatos(url)            
+        }
     }, [url])
 
     async function getDatos(url) {
         try{
             //setResultado({cargando:true,data:null})
             setcargando(true);
-            setdata(null)
+            setdata(undefined)
             const resp = await fetch(url);
             const info = await resp.json();
             setcargando(false);
@@ -24,8 +26,8 @@ function UseFetch(url) {
             console.log(e)
         }
     }
-    console.log('RESULTADOS FETCH');
-    console.log([cargando,data]);
+    //console.log('RESULTADOS FETCH');
+    //console.log([cargando,data]);
   return [cargando,data]
 }
 
