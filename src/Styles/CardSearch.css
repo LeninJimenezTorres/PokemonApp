@@ -3,6 +3,7 @@
     width: 50%;
     height: 95%;
     background-color: rgb(0, 40, 105);
+    background-image: linear-gradient(to right top, #051937, #1e2c6d, #5439a1, #9a39cc, #eb12eb);
     display: flex;
     flex-direction: column;
     justify-content: start;

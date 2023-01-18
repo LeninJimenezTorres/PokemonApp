@@ -106,20 +106,7 @@ function Characters() {
                         )
                         :
                         (
-                            <>
-                            {
-                                console.log('No searching...')
-                            }
-                            {/**
-                                {
-                                    document.documentElement.style.setProperty('--visibility-cards', 'visible') 
-                                }
-                                {
-                                    document.documentElement.style.setProperty('--visibility-search', 'hidden')   
-                                } 
-                            */}
-                            </>
-                        
+                                console.log('No searching...')                        
                         )
                     }
                 </div>
