@@ -5,6 +5,7 @@
     --visibility-cards:visible;
     --visibility-search:hidden;
     --visibility-failmsm:hidden;
+    --search-visibility:visible;
 }
 
 .main-container{
@@ -22,7 +23,7 @@
     background-color: rgba(255, 228, 196, 0);
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .fail-message{
@@ -31,9 +32,9 @@
     width: 60%;
 }
 .search input{
-    width: 38.5%;
-    height: 70%;
-    margin-left: 3.5%;
+    width: 30%;
+    height: 60%;
+    margin-left: 12.5%;
     font-size: 1.5rem;
     font-family: 'Roboto Condensed', sans-serif;
 }
@@ -68,11 +69,11 @@
     position: fixed;
 }
 .paging button{
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .paging-left, .paging-right{
-    width: 50%;
+    width: 35%;
     height: 100%;
     background-color: rgba(255, 0, 0, 0);
     display: flex;
@@ -96,7 +97,7 @@
 button{
     width: 20%;
     height: 70%;
-    background-color: rgb(11, 93, 244);
+    background-color: rgb(0, 0, 0);
     color: white;
     border-radius: 5px;
 }
@@ -111,4 +112,26 @@ button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 2;
+}
+
+.close-search{
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    background-image: var(--image-x);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    left: 71.5vw;
+    top: 22vh;
+    z-index: 3;
+}
+.close-search:hover{
+    width: 50px;
+    height: 50px;
+    left: 71.2vw;
+    top: 21.3vh;
 }

@@ -76,10 +76,13 @@ li{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    left: 88vw;
-    z-index: 2;
+    top: 20vh;
+    left: 88.5vw;
+    z-index: 1;
 }
 .close:hover{
     width: 50px;
     height: 50px;
+    top: 19.5vh;
+    left: 88.2vw;
 }

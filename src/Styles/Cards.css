@@ -20,7 +20,7 @@
 .card-in{
     width: 50%;
     height: 100%;
-    background-color: cadetblue;
+    background-color: rgb(0, 0, 0);
     border-radius: 1px;
     display: flex;
     flex-direction: column;
@@ -28,7 +28,8 @@
     justify-content: center;
     border:5px solid;
     border-width: medium;
-    border-color: aliceblue;
+    border-color: rgba(240, 248, 255, 0);
+    color: aliceblue;
 }
 
 img{
@@ -41,7 +42,8 @@ img{
     height: 10%;
     background-color: rgba(240, 248, 255, 0);
     margin: 4px 0%;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     font-family: 'Roboto', sans-serif;
+    padding: 10px;
 
 }

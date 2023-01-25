@@ -13,6 +13,8 @@ function Characters() {
     const [pokemonSearch, setpokemonSearch] = useState();
     const [url,setUrl] = useState('https://pokeapi.co/api/v2/pokemon/')
     const [fail, setfail] = useState(false)
+    const [viewsearch, setviewsearch] = useState(true)
+    
     const searching = (evt)=>{
         if(evt.key=='Enter'){
             console.log(search)
@@ -44,7 +46,7 @@ function Characters() {
     useEffect(() => {
         if(searchurl!=undefined){
             //document.documentElement.style.setProperty('--visibility-cards', 'hidden');   
-            document.documentElement.style.setProperty('--visibility-search', 'visible');   
+            document.documentElement.style.setProperty('--visibility-search', 'visible'); 
         }
         else if(searchurl==undefined){
             //document.documentElement.style.setProperty('--visibility-cards', 'visible');   
@@ -96,6 +98,11 @@ function Characters() {
                         searchurl!=undefined?
                         (
                             <>
+                                <div className='close-search' onClick={()=>{
+                                    if(searchurl){
+                                        setsearchurl(undefined)
+                                    }          
+                                }}></div>
                                 <CardSearch urlSearch={'https://pokeapi.co/api/v2/pokemon/'+search.toLowerCase()}/>
                                 <>
                                 {
