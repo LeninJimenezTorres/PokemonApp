@@ -7,6 +7,7 @@ function PokemonInfo({url}) {
     }*/
 
     console.log('URL de consulta: '+url);
+    var hoy = new Date();
 
     const estado = UseFetch(url)
     const [cargando,data]=estado;
@@ -72,8 +73,8 @@ function PokemonInfo({url}) {
                                             <ul className='info-items'>
                                                 {
                                                     sprites.length>0?
-                                                    sprites.map(item=>
-                                                        <div className='sprite-in'>
+                                                    sprites.map((item,index)=>
+                                                        <div className='sprite-in' key={index}>
                                                             <a href={item} target='_blank'><img src={item} alt=""/></a>
                                                         </div>
                                                     )

@@ -11,19 +11,35 @@ const Allcards = ({results}) => {
     const [anterior, setanterior] = useState(undefined)
     const [nuevo, setnuevo] = useState(undefined)
     const [cerrar, setcerrar] = useState(false)
+
+    const [width,height] = [window.screen.width,window.screen.height]
+    //console.log('Ancho: '+width);
+    //console.log('Alto: '+height);
+
     useEffect(() => {
         if(preview==true){
             document.documentElement.style.setProperty('--preview-visibility', 'visible');   
             document.documentElement.style.setProperty('--width-preview', '80vw');   
-            document.documentElement.style.setProperty('--width-cards', '20vw');   
-            document.documentElement.style.setProperty('--columns', '2');
+            if(width<768){
+                document.documentElement.style.setProperty('--width-cards', '50vw');   
+                document.documentElement.style.setProperty('--columns', '1');
+            }
+            if(width>=768){
+                document.documentElement.style.setProperty('--width-cards', '40vw');   
+                document.documentElement.style.setProperty('--columns', '2');
+            }
             setcerrar(false)
         }
         if((!preview && (anterior==nuevo)) || (cerrar) ){
             document.documentElement.style.setProperty('--preview-visibility', 'hidden');   
             document.documentElement.style.setProperty('--width-preview', '0vw');   
             document.documentElement.style.setProperty('--width-cards', '100vw');   
-            document.documentElement.style.setProperty('--columns', '4');
+            if(width<768){
+                document.documentElement.style.setProperty('--columns', '2');
+            }
+            if(width>=768){
+                document.documentElement.style.setProperty('--columns', '4');
+            }
         }
     })
     

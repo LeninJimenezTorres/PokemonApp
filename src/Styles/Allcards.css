@@ -1,9 +1,9 @@
 :root {
-    --columns:4;
     --width-cards:100vw;
     --width-preview:0vw;
     --preview-visibility:hidden;
     --image-x: url('./cross.png');
+    --columns:2;
 }
 
 *{
@@ -30,7 +30,7 @@ ul{
     display: grid;
     align-items: flex-start;
     grid-template-columns: repeat(var(--columns), minmax(0%,0.4fr));
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(255, 0, 0, 0);
 }
 
 li{
@@ -64,6 +64,7 @@ li{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: rgba(0, 0, 0, 0);
 }
 .close{
     visibility: var(--preview-visibility);

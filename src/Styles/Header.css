@@ -16,3 +16,38 @@
     background-color: black;
 
 }
+
+ /* Extra small devices (phones, 600px and down) */
+ @media only screen and (max-width: 600px) {
+    .header-container{
+        font-size: 4.2vw;
+    } 
+ }
+
+ /* Small devices (portrait tablets and large phones, 600px and up) */
+ @media only screen and (min-width: 600px) {
+    .header-container{
+        font-size: 3.8vw;
+    } 
+ }
+ 
+ /* Medium devices (landscape tablets, 768px and up) */
+ @media only screen and (min-width: 768px) {
+    .header-container{
+        font-size: 3.0vw;
+    } 
+ }
+ 
+ /* Large devices (laptops/desktops, 992px and up) */
+ @media only screen and (min-width: 992px) {
+    .header-container{
+        font-size: 2.8vw;
+    } 
+ }
+ 
+ /* Extra large devices (large laptops and desktops, 1200px and up) */
+ @media only screen and (min-width: 1200px) {
+    .header-container{
+        font-size: 1.7vw;
+    } 
+ } 
